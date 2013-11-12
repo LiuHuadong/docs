@@ -42,6 +42,11 @@ class ConsumerContext {
     String device;          // Device ID
 } 
 
+class Discount {
+    DateTime start;         // 开始
+    DateTime end;           // 结束
+    int discount;           // 打折信息 0-100    
+}
 
 // 货物
 class Goods {
@@ -69,7 +74,7 @@ class Goods {
     long primaryCurrency;   // 主货币售价    \
     long secondCurrency;    // 次货币售价    --不能组合使用３种货币  
     RealMoney realMoney;    // 真实货币售价   /
-    int discount;           // 打折信息 0-100
+    Discount discount;      // 打折信息
     boolean consumable;     // 货物是否可被消费掉
     int limitPerUser;       // 每用户拥有此货物数量上限
     AppCondition appCondition; // 对客户端Ａpp的需求条件
