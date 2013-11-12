@@ -74,7 +74,9 @@ class Goods {
     AppCondition appCondition; // 对客户端Ａpp的需求条件
     int contentType;        // CT_NONE or CT_URL or CT_TEXT or CT_CONCURRENCY
     Object content;         // 内容，如果type=URL，则为URL;如果type=TEXT，则为文本内容，或为Cost类型 
-    List<Goods> subGoods;   // 子货物列表
+    
+    // Goods parent;        // 父
+    List<Goods> subs;       // 子货物列表
 
     // 其他动态属性
     long salesCount;        // 销量
