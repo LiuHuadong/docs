@@ -239,5 +239,15 @@ class VGClient {
         );
 }
 
+//
+1, change realMoney Name
+2, Highlight Cover in Goods
+3，add developer region
+4, Goods/RealMoney Need Pay 渠道
+
+5, Highlight 多语言
+6， History ID should be more  
+Hint: RegisterLoginCallBack
+
 
 ```
