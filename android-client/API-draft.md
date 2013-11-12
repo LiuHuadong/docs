@@ -43,12 +43,17 @@ class ConsumerContext {
     String device;          // Device ID
 } 
 
+
 // 货物
 class Goods {
     // 常量
     static final int FREE = 1; // 免费
     static final int PAID = 2; // 付费
     static final int ANON_FREE = 3; // 对未登录用户免费
+
+    static final int CT_NONE = 0;  // 没有内容
+    static final int CT_URL = 1;   // 下载链接
+    static final int CT_TEXT = 2;  // 文本内容
 
     // 商品属性
     String id;              // ID
@@ -67,25 +72,13 @@ class Goods {
     boolean consumable;     // 货物是否可被消费掉
     int limitPerUser;       // 每用户拥有此货物数量上限
     AppCondition appCondition; // 对客户端Ａpp的需求条件
-    Body body;              // 货物内容
-    String[] subIds;        // 子货物ID列表
+    int contentType;                // CT_NONE or CT_URL or CT_TEXT
+    String content;                 // 内容，如果type=URL，则为URL;如果type=TEXT，则为文本内容 
+    List<Goods> subGoods;           // 子货物列表
 
     // 其他动态属性
     long salesCount;        // 销量
-    // ...
-
-
-    // 内容
-    class Body {
-        // 常量
-        static final int NONE = 0;  // 没有内容
-        static final int URL = 1;   // 下载链接
-        static final int TEXT = 2;  // 文本内容
-
-        int type;           // NONE or URL or TEXT
-        String content;     // 内容，如果type=URL，则为URL;如果type=TEXT，则为文本内容
-        String appData;     // 用户自定义文本信息
-    }
+    // ...   
 
     // 带有数量的货物
     class WithCount extends Goods {
