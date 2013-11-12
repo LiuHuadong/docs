@@ -17,9 +17,9 @@ class RealMoney {
 // 花费
 class Cost {
     // 常量
-    static final int PRIMARY_CURRENCY = 1;
-    static final int SECOND_CURRENCY = 2;
-    static final int REAL_MONEY = 3;
+    static final int PRIMARY_CURRENCY = 11;
+    static final int SECOND_CURRENCY = 12;
+    static final int REAL_MONEY = 13;
     
     int type;               // PRIMARY_CURRENCY or SECOND_CURRENCY or REAL_MONDY
     Object cost;            // 根据 type 不同，所代表内容为Long或者RealMoney的值
@@ -53,6 +53,7 @@ class Goods {
     static final int CT_NONE = 0;  // 没有内容
     static final int CT_URL = 1;   // 下载链接
     static final int CT_TEXT = 2;  // 文本内容
+    static final int CT_CONCURRENCY = 4; // 货币内容
 
     // 商品属性
     String id;              // ID
@@ -71,8 +72,8 @@ class Goods {
     boolean consumable;     // 货物是否可被消费掉
     int limitPerUser;       // 每用户拥有此货物数量上限
     AppCondition appCondition; // 对客户端Ａpp的需求条件
-    int contentType;        // CT_NONE or CT_URL or CT_TEXT
-    String content;         // 内容，如果type=URL，则为URL;如果type=TEXT，则为文本内容 
+    int contentType;        // CT_NONE or CT_URL or CT_TEXT or CT_CONCURRENCY
+    Object content;         // 内容，如果type=URL，则为URL;如果type=TEXT，则为文本内容，或为Cost类型 
     List<Goods> subGoods;   // 子货物列表
 
     // 其他动态属性
