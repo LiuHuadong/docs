@@ -72,9 +72,9 @@ class Goods {
     boolean consumable;     // 货物是否可被消费掉
     int limitPerUser;       // 每用户拥有此货物数量上限
     AppCondition appCondition; // 对客户端Ａpp的需求条件
-    int contentType;                // CT_NONE or CT_URL or CT_TEXT
-    String content;                 // 内容，如果type=URL，则为URL;如果type=TEXT，则为文本内容 
-    List<Goods> subGoods;           // 子货物列表
+    int contentType;        // CT_NONE or CT_URL or CT_TEXT
+    String content;         // 内容，如果type=URL，则为URL;如果type=TEXT，则为文本内容 
+    List<Goods> subGoods;   // 子货物列表
 
     // 其他动态属性
     long salesCount;        // 销量
